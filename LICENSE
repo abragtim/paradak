@@ -1,0 +1,28 @@
+Paradak
+Copyright (c) 2026 abragtim. All rights reserved.
+
+Paradak is free of charge. You may download it, install it and use it on any number of
+your own computers, and you may pass on unmodified copies of the official installer
+(Paradak.dmg) free of charge.
+
+Without written permission you may not sell Paradak, distribute modified versions of it,
+or decompile or reverse engineer it (except where the law allows this regardless).
+
+Paradak is provided "as is", without warranty of any kind, express or implied. It moves
+and deletes files at your request; the author is not liable for any loss of data or other
+damage arising from its use.
+
+THIRD-PARTY SOFTWARE
+
+Paradak includes Mole (https://github.com/tw93/Mole), unmodified, in
+Paradak.app/Contents/Resources/mole. Paradak runs Mole as a separate program. Mole is
+licensed under the GNU General Public License, version 3 or (at your option) any later
+version, and NOT under the terms above: nothing in this licence limits your rights under
+the GPL for Mole. Mole's licence text, the licences of the libraries compiled into its
+analyze-go helper, and its complete corresponding source code (including those libraries
+and the script used to build it) are available at
+https://github.com/abragtim/paradak/tree/main/mole and are attached to every release at
+https://github.com/abragtim/paradak/releases.
+
+"Mole" is a trademark of the Mole project. Paradak is a separate project and is not
+affiliated with or endorsed by Mole.

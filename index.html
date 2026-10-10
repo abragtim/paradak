@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="be">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Парадак — парадак на Mac</title>
+<meta name="description" content="Простая праграма па-беларуску, каб ачысціць Mac, выдаліць праграму і паглядзець, што займае месца.">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  :root {
+    --flax: #2E55A6; --flax-soft: #E3EAF8; --ink: #1A2233; --ash: #566074;
+    --canvas: #F2F4F8; --sheet: #FFFFFF; --line: #DCE1EA; --on-flax: #FFFFFF;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --flax: #8FAEF0; --flax-soft: #26324D; --ink: #E8ECF4; --ash: #A3ACBD;
+      --canvas: #14171D; --sheet: #1E222A; --line: #2E3440; --on-flax: #0F1830;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--canvas); color: var(--ink);
+    font: 17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+  .rounded { font-family: ui-rounded, "SF Pro Rounded", -apple-system, system-ui, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 32px; }
+  header { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  header img { width: 112px; height: 112px; }
+  h1 { font-size: 44px; line-height: 1.1; margin: 0 0 6px; }
+  .lead { margin: 0; color: var(--ash); max-width: 520px; }
+  .download { margin: 32px 0 8px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 28px;
+    border-radius: 12px; background: var(--flax); color: var(--on-flax); text-decoration: none;
+    font-size: 19px; font-weight: 600;
+  }
+  .button:focus-visible { outline: 3px solid var(--flax); outline-offset: 4px; }
+  .meta { color: var(--ash); font-size: 15px; margin: 8px 0 0; }
+  h2 { font-size: 26px; margin: 48px 0 16px; }
+  .panel { background: var(--sheet); border: 1px solid var(--line); border-radius: 18px; padding: 8px 24px; }
+  ol { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  ol li { counter-increment: step; display: flex; gap: 16px; padding: 16px 0; border-top: 1px solid var(--line); }
+  ol li:first-child { border-top: 0; }
+  ol li::before { content: counter(step); color: var(--flax); font-weight: 600; min-width: 18px; }
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .shots img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); display: block; }
+  .note { color: var(--ash); font-size: 15px; }
+  footer { margin-top: 56px; color: var(--ash); font-size: 15px; border-top: 1px solid var(--line); padding-top: 20px; }
+  a { color: var(--flax); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="" width="112" height="112">
+    <div>
+      <h1 class="rounded">Парадак</h1>
+      <p class="lead">Простая праграма па-беларуску, каб навесці парадак на Mac: ачысціць часовыя файлы, выдаліць праграму і паглядзець, што займае месца.</p>
+    </div>
+  </header>
+
+  <div class="download">
+    <a class="button rounded" href="https://github.com/abragtim/paradak/releases/latest/download/Paradak.dmg">Спампаваць для Mac</a>
+    <p class="meta">Бясплатна. macOS 14 і навейшыя, Apple Silicon і Intel. Нічога дадаткова ўсталёўваць не трэба.</p>
+  </div>
+
+  <h2 class="rounded">Як усталяваць</h2>
+  <div class="panel">
+    <ol>
+      <li><span>Адкрыйце спампаваны файл <b>Paradak.dmg</b> і перацягніце «Парадак» у папку з праграмамі.</span></li>
+      <li><span>Адкрыйце «Парадак». Першы раз Mac скажа, што не можа праверыць праграму: націсніце <b>Done</b>, адкрыйце <b>System Settings → Privacy &amp; Security</b> (Сістэмныя налады → Прыватнасць і бяспека) і ўнізе націсніце <b>Open Anyway</b>. Гэта трэба зрабіць толькі адзін раз.</span></li>
+      <li><span>Дайце праграме поўны доступ да дыска. «Парадак» сам пакажа, як гэта зрабіць.</span></li>
+    </ol>
+  </div>
+
+  <h2 class="rounded">Як гэта выглядае</h2>
+  <div class="shots">
+    <picture>
+      <source srcset="screenshots/home-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="screenshots/home-light.png" alt="Галоўны экран: колькі месца вольна і тры дзеянні" width="1360" height="1240" loading="lazy">
+    </picture>
+    <picture>
+      <source srcset="screenshots/clean-ready-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="screenshots/clean-ready-light.png" alt="Ачыстка: колькі можна вызваліць" width="1360" height="1240" loading="lazy">
+    </picture>
+    <picture>
+      <source srcset="screenshots/clean-cleaning-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="screenshots/clean-cleaning-light.png" alt="Ідзе ачыстка: дворнік падмятае" width="1360" height="1240" loading="lazy">
+    </picture>
+    <picture>
+      <source srcset="screenshots/space-loaded-dark.png" media="(prefers-color-scheme: dark)">
+      <img src="screenshots/space-loaded-light.png" alt="Што займае месца: папкі і самыя вялікія файлы" width="1360" height="1240" loading="lazy">
+    </picture>
+  </div>
+
+  <h2 class="rounded">Бяспечна</h2>
+  <div class="panel">
+    <ol>
+      <li><span>Перад кожным выдаленнем праграма паказвае, што і колькі будзе выдалена, і чакае вашага пацверджання.</span></li>
+      <li><span>Выдаленыя праграмы і файлы трапляюць у Сметніцу, адкуль іх можна вярнуць.</span></li>
+      <li><span>Ачыстка Mac таксама ачышчае Сметніцу — пра гэта праграма папярэджвае загадзя.</span></li>
+    </ol>
+  </div>
+
+  <footer>
+    <p>© 2026 abragtim. «Парадак» — бясплатная праграма, <a href="https://github.com/abragtim/paradak/blob/main/LICENSE">умовы выкарыстання</a>.</p>
+    <p class="note">Працуе на аснове <a href="https://github.com/tw93/Mole">Mole</a>, які ўжо ўбудаваны ў праграму. Mole распаўсюджваецца па ліцэнзіі GPL-3.0; <a href="https://github.com/abragtim/paradak/tree/main/mole">яго зыходны код і ліцэнзія</a> даступныя з кожным выпускам. «Парадак» — асобны праект і афіцыйна не звязаны з Mole.</p>
+  </footer>
+</main>
+</body>
+</html>
